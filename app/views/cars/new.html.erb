@@ -1,0 +1,31 @@
+<h1>New Car</h1>
+
+
+<%= form_for @cars |f| %>
+
+<label>Car type</label><br/>
+<%= f.collection_select :cartype_id, CarType.all, :id,  prompt: "Select" %><br/>
+
+<label>Manufacturer name</label><br/>
+<%= f.text_field :manufacture_name %><br/>
+
+<label>Model name</label><br/>
+<%= f.text_field :model_name %><br/>
+
+<label>Model year</label><br/>
+<%= f.date_select :model_year<br/>
+
+<label>price</label><br/>
+<%= f.text_field :price %> 
+
+<br/>
+
+
+<%= f.submit %>
+
+<% end %>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', cars_path %>
+
